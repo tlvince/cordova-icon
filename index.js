@@ -234,18 +234,11 @@ var configFileExists = function () {
     return deferred.promise;
 };
 
-display.header('Checking Project & Icon');
-
-atLeastOnePlatformFound()
-    .then(validIconExists)
-    .then(configFileExists)
-    .then(getProjectName)
-    .then(getPlatforms)
-    .then(generateIcons)
-    .catch(function (err) {
-        if (err) {
-            console.log(err);
-        }
-    }).then(function () {
-        console.log('');
-    });
+exports.generate = function() {
+    return atLeastOnePlatformFound()
+        .then(validIconExists)
+        .then(configFileExists)
+        .then(getProjectName)
+        .then(getPlatforms)
+        .then(generateIcons);
+};
