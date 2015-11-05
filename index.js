@@ -42,7 +42,6 @@ var getPlatforms = function (projectName) {
         iconsPath : 'platforms/android/res/',
         isAdded : fs.existsSync('platforms/android'),
         icons : [
-            { name : 'drawable/icon.png',       size : 96 },
             { name : 'drawable-hdpi/icon.png',  size : 72 },
             { name : 'drawable-ldpi/icon.png',  size : 36 },
             { name : 'drawable-mdpi/icon.png',  size : 48 },
